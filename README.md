@@ -23,11 +23,28 @@ Commit your code regularly and meaningfully. This practice helps both you (in ca
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your answers beforehand.
 
 1. Hashing functions
+
+A hashing function is a function where the input is any data, and the output is a number. A hashing function must be consistent/deterministic (return the same output given the same input), must return different numbers for different inputs, and must return numbers within a specific range.
+
 2. Collision resolution
+
+Instead of holding only one item at each index, we can hold a collection of items in a linked list. That way, new items that are hashed to the same index do not overwrite each other but keep getting added to the list.
+
 3. Performance of basic hash table operations
+
+Because each spot in the hash table can now be a linked list instead of a single item, the worst case for search, insert, and deletion will be linear time. However, with a good hashing function that minimizes collisions and automatic resizing dependent on the load factor, the average case for search/insert/deletion will still be constant time.
+
 4. Load factor
+
+Load factor is the total number of items in the hash table divided by number of hash table slots. Load factor allows us to maintain the perfect size of the hash table as items get added or removed.
+
 5. Automatic resizing
+
+Automatic resizing should happen whenever the load factor becomes too big (> 0.7) -- and trigger the hash table to double in size to accomodate all the elements -- or too small (< 0.2) -- triggering the hash table to half in size, so that it is not taking up so much space accomodating so few elements. It's a good practice to check the load factor each time a new element is added or deleted to see if the hash table should be resized.
+
 6. Various use cases for hash tables
+
+Because search, insertion, and deletion average out to constant time in a hash table, this data structure lends itself well to problems that require (or can be solved faster using) lookups, duplicate prevention, and caching.
 
 We expect you to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
